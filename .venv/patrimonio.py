@@ -1,4 +1,4 @@
-from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton,QVBoxLayout
+from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton,QVBoxLayout, QMessageBox
 import sys
 
 class patrimonio(QWidget):
@@ -105,6 +105,8 @@ class patrimonio(QWidget):
         arquivo.write(f"Data de fabricação: {self.edit_fabricacao.text()}\n")
         arquivo.write(f"Data de aquisição: {self.edit_aquisicao.text()}\n")
         arquivo.close()
+
+        QMessageBox.information(self,"Salvo", "Os dados do patrimonio foram salvos")
 
 # app = QApplication(sys.argv)
 # tela = patrimonio()
