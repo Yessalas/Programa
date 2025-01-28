@@ -95,18 +95,28 @@ class patrimonio(QWidget):
         self.setLayout(self.layout_v)   
     
     def cadastrar(self):
-        arquivo = open("cliente.txt", "+a", encoding="utf-8")
-        arquivo.write(f"ID: {self.edit_id.text()}\n")
-        arquivo.write(f"Número de série: {self.edit_serie.text()}\n")
-        arquivo.write(f"Nome do patrimônio: {self.edit_patrimonio.text()}\n")
-        arquivo.write(f"Tipo: {self.edit_tipo.text()}\n")
-        arquivo.write(f"Descrição: {self.edit_descricao.text()}\n")
-        arquivo.write(f"Localização: {self.edit_localizacao.text()}\n")
-        arquivo.write(f"Data de fabricação: {self.edit_fabricacao.text()}\n")
-        arquivo.write(f"Data de aquisição: {self.edit_aquisicao.text()}\n")
-        arquivo.close()
+        if (self.edit_id.text () == "" 
+                or self.edit_serie.text()== "" 
+                or self.edit_patrimonio.text() == "" 
+                or self.edit_tipo.text() == ""
+                or self.edit_descricao.text() == "" 
+                or self.edit_localizacao.text() ==""
+                or self.edit_fabricacao.text () == ""
+                or self.edit_aquisicao.text ()==""
+                ): QMessageBox.critical(self, "Erro" , "Você deve preencher todos os espaços")
+        else:
+                arquivo = open("cliente.txt", "+a", encoding="utf-8")
+                arquivo.write(f"ID: {self.edit_id.text()}\n")
+                arquivo.write(f"Número de série: {self.edit_serie.text()}\n")
+                arquivo.write(f"Nome do patrimônio: {self.edit_patrimonio.text()}\n")
+                arquivo.write(f"Tipo: {self.edit_tipo.text()}\n")
+                arquivo.write(f"Descrição: {self.edit_descricao.text()}\n")
+                arquivo.write(f"Localização: {self.edit_localizacao.text()}\n")
+                arquivo.write(f"Data de fabricação: {self.edit_fabricacao.text()}\n")
+                arquivo.write(f"Data de aquisição: {self.edit_aquisicao.text()}\n")
+                arquivo.close()
 
-        QMessageBox.information(self,"Salvo", "Os dados do patrimonio foram salvos")
+                QMessageBox.information(self,"Salvo", "Os dados do patrimonio foram salvos")
 
 # app = QApplication(sys.argv)
 # tela = patrimonio()
