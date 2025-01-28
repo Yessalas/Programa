@@ -1,6 +1,7 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton,QVBoxLayout
 import sys
-class cadastropatrimonio(QWidget):
+
+class patrimonio(QWidget):
     def __init__(self):
         super().__init__()
         self.setGeometry(10,30,400,300)
@@ -94,7 +95,7 @@ class cadastropatrimonio(QWidget):
         self.setLayout(self.layout_v)   
     
     def cadastrar(self):
-        arquivo = open("cliente.txt", "+a")
+        arquivo = open("cliente.txt", "+a", encoding="utf-8")
         arquivo.write(f"ID: {self.edit_id.text()}\n")
         arquivo.write(f"Número de série: {self.edit_serie.text()}\n")
         arquivo.write(f"Nome do patrimônio: {self.edit_patrimonio.text()}\n")
@@ -105,7 +106,7 @@ class cadastropatrimonio(QWidget):
         arquivo.write(f"Data de aquisição: {self.edit_aquisicao.text()}\n")
         arquivo.close()
 
-app = QApplication(sys.argv)
-tela = cadastropatrimonio()
-tela.show()
-app.exec()      
+# app = QApplication(sys.argv)
+# tela = patrimonio()
+# tela.show()
+# app.exec()      

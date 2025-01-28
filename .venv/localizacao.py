@@ -1,6 +1,6 @@
 from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QLineEdit, QPushButton,QVBoxLayout
 import sys
-class cadastralocalizacao(QWidget):
+class Localizacao(QWidget):
     def __init__(self):
         super().__init__()
         self.setGeometry(10,30,400,300)
@@ -96,7 +96,7 @@ class cadastralocalizacao(QWidget):
         arquivo.write(f"Sala: {self.edit_sala.text()}\n")
         arquivo.close()
 
-app = QApplication(sys.argv)
-tela = cadastralocalizacao()
-tela.show()
-app.exec()      
+# app = QApplication(sys.argv)
+# tela = Localizacao()
+# tela.show()
+# app.exec()      

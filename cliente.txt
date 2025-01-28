@@ -1,0 +1,9 @@
+ID: 9
+Número de série: 9
+Nome do patrimônio: pc gamer
+Tipo: eletronico
+Descrição: computador de boa qualidade
+Localização: r.jujuba
+Data de fabricação: 19/08/24
+Data de aquisição: 27/01/25
+
