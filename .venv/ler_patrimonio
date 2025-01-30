@@ -1,0 +1,11 @@
+import csv
+
+# abrir o arquivo csv e atribuir 
+# a uma variavel
+arquivo = open("cliente.csv", "+a", encoding="utf8")
+linhas = csv.reader(arquivo)
+
+for i in linhas:
+    lin = str(i).replace("['","").replace("']","")
+    if(lin[0]=="14"):
+        print(lin)

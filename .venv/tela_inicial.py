@@ -3,6 +3,7 @@ from PyQt5.QtWidgets import QApplication, QWidget, QLabel, QPushButton, QVBoxLay
 from patrimonio import patrimonio
 from localizacao import Localizacao
 from atualizar import Atualizar
+from localiza_patrimonio import Localiza_patrimonio
 
 class TelaInicial(  QWidget):
     def __init__(self):
@@ -15,16 +16,19 @@ class TelaInicial(  QWidget):
         self.button = QPushButton("Abrir Patrimônio")
         self.button_2 = QPushButton("Abrir Localização")
         self.button_3 = QPushButton("Atualizar")
+        self.bt_localizar_patrimonio = QPushButton("Localizar patrimônio")
 
 
         self.layout_v.addWidget(self.label_titulo)
         self.layout_v.addWidget(self.button)
         self.layout_v.addWidget(self.button_2)
         self.layout_v.addWidget(self.button_3)
+        self.layout_v.addWidget(self.bt_localizar_patrimonio)
 
         self.button.clicked.connect(self.abrir_cadastro)
         self.button_2.clicked.connect(self.abrir_localizacao)
         self.button_3.clicked.connect(self.abrir_atualizar)
+        self.bt_localizar_patrimonio.clicked.connect(self.abrir_localiza_patrimonio)
 
         self.setLayout(self.layout_v)
     
@@ -38,6 +42,10 @@ class TelaInicial(  QWidget):
 
     def abrir_atualizar(self):
         self.pat = Atualizar()
+        self.pat.show()
+
+    def abrir_localiza_patrimonio(self):
+        self.pat = Localiza_patrimonio()
         self.pat.show()
 
 app = QApplication(sys.argv)
